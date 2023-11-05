@@ -15,16 +15,36 @@
             align-items: center;
             justify-content: center;
           }
-          #interactElem{
+          #interactInput{
             width: 50px;
             height: 50px;
+            border-radius: 25px;
             background-color: aquamarine;
+          }
+          #interactOutput{
+            width: 80px;
+            height: 80px;
+            background-color:blue;
           }
         </style>
     </head>
 
     <body>
-        <div id="interactElem"></div>
-        <script type="text/javascript" src="app.js"></script>
+        <div id="interactInput"></div>
+        <div id="interactOutput"></div>
+       
     </body>
+    <script type="text/javascript" src="app.js">
+        const sensor = new RelativeOrientationSensor();
+        Promise.all([
+            navigator.permissions.query({ name: "accelerometer" }),
+            navigator.permissions.query({ name: "gyroscope" }),
+        ]).then((results) => {
+            if (results.every((result) => result.state === "granted")) {
+                console.log('go');
+            } else {
+                console.log("No permissions to use RelativeOrientationSensor.");
+            }
+        });
+    </script>
 </html>
