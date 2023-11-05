@@ -7,7 +7,7 @@ Promise.all([
         const sensor = new RelativeOrientationSensor(options);
         sensor.addEventListener("reading", () => {
             // model is a Three.js object instantiated elsewhere.
-            model.quaternion.fromArray(sensor.quaternion).inverse();
+            console.log(sensor.quaternion);
           });
           sensor.addEventListener("error", (error) => {
             if (event.error.name === "NotReadableError") {
