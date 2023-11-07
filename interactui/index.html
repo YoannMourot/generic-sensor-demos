@@ -24,7 +24,8 @@
           #interactOutput{
             width: 80px;
             height: 80px;
-            background-color:blue;
+            background-color:rgb(113, 113, 161);
+            visibility: hidden;
           }
         </style>
     </head>
@@ -35,16 +36,6 @@
        
     </body>
     <script type="text/javascript" src="app.js">
-        const sensor = new RelativeOrientationSensor();
-        Promise.all([
-            navigator.permissions.query({ name: "accelerometer" }),
-            navigator.permissions.query({ name: "gyroscope" }),
-        ]).then((results) => {
-            if (results.every((result) => result.state === "granted")) {
-                console.log('go');
-            } else {
-                console.log("No permissions to use RelativeOrientationSensor.");
-            }
-        });
+
     </script>
 </html>
