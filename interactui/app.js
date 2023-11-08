@@ -1,4 +1,3 @@
-<script src="js/three.min.js"></script>
 if (navigator.permissions) {
   Promise.all([
       navigator.permissions.query({ name: "accelerometer" }),
