@@ -4,8 +4,8 @@ if (navigator.permissions) {
       navigator.permissions.query({ name: "magnetometer" }),
     ]).then(results => {
       if (results.every((result) => result.state === "granted")) {
-        const options = { frequency: 60};
-        const sensor = new AbsoluteOrientationSensor(options);
+        const options = { frequency: 1, referenceFrame: "device" };
+        const sensor = new RelativeOrientationSensor(options);
             sensor.addEventListener("reading", () => {
                 console.log(sensor.quaternion); 
                 if(sensor.quaternion[0] >= 0.25) {
