@@ -16,7 +16,7 @@ if (navigator.permissions) {
           cube.rotation.z = cube.rotation.z+Math.PI / 2;
           cube.rotation.z = cube.rotation.z+Math.PI / 2;
           console.log(cube.quaternion);
-          if(cube.quaternion[1] >= 0.25) {
+          if(cube.quaternion._y >= 0.25) {
             document.getElementById( 'interactOutput' ).style.visibility = 'visible';
           } else {
            document.getElementById('interactOutput').style.visibility = 'hidden';
