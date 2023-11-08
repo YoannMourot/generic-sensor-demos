@@ -4,7 +4,7 @@ if (navigator.permissions) {
       navigator.permissions.query({ name: "magnetometer" }),
     ]).then(results => {
       if (results.every((result) => result.state === "granted")) {
-        const options = { frequency: 1, referenceFrame: "device" };
+        const options = { frequency: 60, referenceFrame: "device" };
         const sensor = new RelativeOrientationSensor(options);
         const geometry = new THREE.BoxGeometry( 1, 1, 1 );
         const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
