@@ -2,10 +2,9 @@ if (navigator.permissions) {
   Promise.all([
       navigator.permissions.query({ name: "accelerometer" }),
       navigator.permissions.query({ name: "magnetometer" }),
-      navigator.permissions.query({ name: "gyroscope" })
     ]).then(results => {
       if (results.every((result) => result.state === "granted")) {
-        const options = { frequency: 60, referenceFrame: "device" };
+        const options = { frequency: 60};
         const sensor = new AbsoluteOrientationSensor(options);
             sensor.addEventListener("reading", () => {
                 console.log(sensor.quaternion); 
