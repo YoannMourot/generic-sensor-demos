@@ -15,9 +15,9 @@ if (navigator.permissions) {
           cube.rotation.z = cube.rotation.z+Math.PI / 2;
           console.log(cube.quaternion);
           if(cube.quaternion._x >= 0.2) {
-            document.getElementById( 'interactOutput' ).style.visibility = 'visible';
+            document.getElementById( 'interactOutput' ).style.display = 'flex';
           } else {
-           document.getElementById('interactOutput').style.visibility = 'hidden';
+           document.getElementById('interactOutput').style.visibility = 'none';
           }
         });
         sensor.addEventListener("error", (error) => {
