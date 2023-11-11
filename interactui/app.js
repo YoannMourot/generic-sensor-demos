@@ -1,3 +1,5 @@
+let circleIsHolded = false;
+
 if (navigator.permissions) {
   Promise.all([
       navigator.permissions.query({ name: "accelerometer" }),
@@ -17,7 +19,7 @@ if (navigator.permissions) {
           if(cube.quaternion._x >= 0.2) {
             document.getElementById( 'interactOutput' ).style.display = 'flex';
           } else {
-           document.getElementById('interactOutput').style.visibility = 'none';
+           document.getElementById('interactOutput').style.display = 'none';
           }
         });
         sensor.addEventListener("error", (error) => {
@@ -35,3 +37,10 @@ if (navigator.permissions) {
 } else {
   console.log("No Permissions API, still try to start app.");
 }
+
+document.getElementById("interactInput").addEventListener("mousedown", function() {
+  circleIsHolded = true;
+});
+document.getElementById("interactInput").addEventListener("mouseup", function() {
+  circleIsHolded = false;
+});
