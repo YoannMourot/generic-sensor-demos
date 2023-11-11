@@ -14,7 +14,7 @@ if (navigator.permissions) {
           cube.quaternion.fromArray(sensor.quaternion).inverse();
           cube.rotation.z = cube.rotation.z+Math.PI / 2;
           console.log(cube.quaternion);
-          if(cube.quaternion._x >= 0.25) {
+          if(cube.quaternion._x >= -0.2) {
             document.getElementById( 'interactOutput' ).style.visibility = 'visible';
           } else {
            document.getElementById('interactOutput').style.visibility = 'hidden';
