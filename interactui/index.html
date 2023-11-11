@@ -16,23 +16,32 @@
             justify-content: center;
           }
           #interactInput{
-            width: 50px;
-            height: 50px;
-            border-radius: 25px;
+            width: 8em;
+            height: 8em;
+            border-radius: 4em;
             background-color: aquamarine;
+            position: relative;
+            top: 25%;
           }
           #interactOutput{
-            width: 80px;
-            height: 80px;
+            position: absolute;
             background-color:rgb(113, 113, 161);
-            visibility: hidden;
+            width: 8em;
+            height: 8em;  
+            display: flex;
+            bottom: 8em;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            display: none;
           }
         </style>
     </head>
 
     <body>
-        <div id="interactInput"></div>
-        <div id="interactOutput"></div>
+        <div id="interactInput">
+          <div id="interactOutput">This is a submenu</div>
+        </div>
        
     </body>
     <script src="js/three.min.js"></script>
